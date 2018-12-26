@@ -325,7 +325,7 @@ table tr
     -webkit-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 table thead tr th{padding:1rem 1rem;}
-table td, table th{display:table-cell; padding:0.875rem 1rem; vertical-align:midle; text-align:left;}
+table td, table th{display:table-cell; padding:0.875rem 1rem; vertical-align:middle; text-align:left;}
 
 .table{border:0;}
 .table thead{border-bottom:3px solid #CCC;}
