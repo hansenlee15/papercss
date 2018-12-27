@@ -331,8 +331,8 @@ table td, table th{display:table-cell; padding:0.875rem 1rem; vertical-align:mid
 .table thead{border-bottom:3px solid #CCC;}
 .table tbody tr{border-top:1px solid #CCC;}
 
-.table .borderless{}
-.table .borderless tbody tr td, .table.borderless thead tr th{border:0 solid #FFF;}
+.table.borderless{}
+.table.borderless tbody tr td, .table.borderless thead tr th{border:0 solid #FFF;}
 .table.borderless thead{border:0 solid #FFF;}
 
 .table.bordered{}
