@@ -188,13 +188,14 @@ body{
 .t-align-left{text-align:left;}
 .t-align-right{text-align:right;}
 .t-align-center{text-align:center;}
+.t-align-middle{text-align:center; vertical-align:middle; display:inline-block;}
 .t-align-justify{text-align:justify;}
 
 /*Vertical Align*/
 .valign-default{vertical-align:baseline;}
 .valign-top{vertical-align:top;}
 .valign-text-top{vertical-align:text-top;}
-.valign-middle{vertical-align:middle;}
+.valign-middle{vertical-align:middle; display:inline-block;}
 .valign-bottom{vertical-align:bottom;}
 .valign-text-bottom{vertical-align:text-bottom;}
 
