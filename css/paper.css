@@ -7,8 +7,8 @@ Author      : Hansen Lee
 TABLE OF CONTENTS
 ----------------------------------------------------------------
 1.0 Normalize
-2.0 Accessibility
-3.0 Alignments
+2.0 Accessibilit
+y3.0 Alignments
 4.0 Clearings
 5.0 Typography
 6.0 Forms
@@ -48,11 +48,20 @@ TABLE OF CONTENTS
 :root
 {
 }
-html,body
+html, body, div, span, header, footer, aside, 
+nav, menu, main, section, article, details, 
+h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd, 
+em, small, big, strong, b, u, i, 
+sub, sup, 
+del, strike, q, blockquote, cite, time, address, code, 
+pre, a, img, center, hr, form, fieldset, legend, label, 
+input, textarea, button, table, caption, tbody, thead, 
+tfoot, tr, th, td, iframe, object, canvas, audio, video, embed
 {
     margin:0;
     padding:0;
-}
+    border:0;}
+
 
 body{
     -webkit-font-smoothing: antialiased;
@@ -60,6 +69,9 @@ body{
     box-sizing:border-box;
     background-color:#FFF;
     font-size:1em;
+    transition: height 0.66s ease-out;
+    -moz-transition: height 0.66s ease-out;
+    -webkit-transition: height 0.66s ease-out;
 }
 *,*:before,*:after
 {
@@ -187,11 +199,11 @@ body{
 .valign-text-bottom{vertical-align:text-bottom;}
 
 /*Row Flex align*/
-.flex-start{align-items:flex-start !important;}
-.flex-center{align-items:center !important;}
-.flex-end{align-items:flex-end !important;}
-.flex-stretch{align-items:stretch !important;}
-.flex-baseline{align-items:baseline !important;}
+.flex-align-start{align-items:flex-start !important;}
+.flex-align-center{align-items:center !important;}
+.flex-align-end{align-items:flex-end !important;}
+.flex-align-stretch{align-items:stretch !important;}
+.flex-align-baseline{align-items:baseline !important;}
 
 /*
  * 4.0 Clearings
@@ -237,12 +249,12 @@ dl{}
 ul, ol, dl{margin-bottom:0.571rem; font-family:inherit; color:inherit;}
 
 /*Tooltip*/
-.tooltip{position:relative; display:inline-block; border-bottom:1px dashed #CCC;}
+.tooltip{position:relative; display:inline-block;}
+.tooltip .tooltiptext{background-color:#303030; border-color:#303030;}
 .tooltip .tooltiptext
 {
     visibility: hidden;
     width:120px;
-    background-color:#000;
     color:#FFF;
     text-align:center;
     padding:0.25rem 0;
@@ -250,29 +262,87 @@ ul, ol, dl{margin-bottom:0.571rem; font-family:inherit; color:inherit;}
     position:absolute;
     z-index:1;
 }
-.tooltip .tooltiptext::after
-{
-  content:" ";
-  position:absolute;
-  top:100%; /* At the bottom of the tooltip */
-  left:50%;
-  margin-left:-5px;
-  border-width:5px;
-  border-style:solid;
-  border-color:inherit transparent transparent transparent;
-}
 
 .tooltip:hover .tooltiptext {
   visibility:visible;
 }
-.tooltip .tooltiptext.tooltip-right {top:-5px; left:105%;}
-.tooltip .tooltiptext.tooltip-left{top: -5px; right: 105%;}
-
+.tooltip-top
+{
+    /*width:120px;*/
+    bottom:100%;
+    left:50%;
+    margin-left:-60px;
+}
+.tooltip-right {top:25%; left:110%;}
+.tooltip-left{top:25%; right:110%;}
+.tooltip-bottom
+{
+    /*width:120px;*/
+    top:100%;
+    left:50%;
+    margin-left:-60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+.tooltiptext.tooltip-top::after
+{
+    content:" ";
+    position:absolute;
+    top:100%; /* At the bottom of the tooltip */
+    left:50%;
+    margin-left:-5px;
+    border-width:5px;
+    border-style:solid;
+    border-top-color:inherit;
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+}
+.tooltiptext.tooltip-left::after
+{
+    content:" ";
+    position:absolute;
+    top:50%;
+    left:100%; /* To the right of the tooltip */
+    margin-top:-5px;
+    border-width:5px;
+    border-style:solid;
+    border-top-color:transparent;
+    border-left-color:inherit;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+}
+.tooltiptext.tooltip-right::after
+{
+    content:" ";
+    position:absolute;
+    top:50%;
+    right:100%; /* To the left of the tooltip */
+    margin-top:-5px;
+    border-width:5px;
+    border-style: solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    border-right-color:inherit;
+    border-bottom-color:transparent;
+}
+.tooltiptext.tooltip-bottom::after
+{
+    content:" ";
+    position:absolute;
+    bottom:100%;  /* At the top of the tooltip */
+    left:50%;
+    margin-left:-5px;
+    border-width:5px;
+    border-style:solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:inherit;
+}
 
 /*
  * 6.0 Form
  */
-button, input, optgroup, select, textarea{margin:0.75rem 0; padding:0.4rem 0.875rem 0.4rem;}
+button, input, optgroup, select, textarea, a.btn{margin:0.75rem 0; padding:0.4rem 0.875rem 0.4rem; font:400 0.8em Arial;}
 
 input.rounded, optgroup.rounded, select.rounded, textarea.rounded{border-radius:0.3rem; -moz-border-radius:0.3rem; -webkit-border-radius:0.3rem;}
 
@@ -365,7 +435,7 @@ table tr
     -webkit-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 table thead tr th{padding:1rem 1rem;}
-table td, table th{display:table-cell; padding:0.875rem 1rem; vertical-align:middle; text-align:left;}
+table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:middle; text-align:left;}
 
 .table{border:0;}
 .table thead{border-bottom:3px solid #CCC;}
@@ -412,6 +482,53 @@ a
     cursor:pointer;
 }
 
+/*
+ * 12.0 Navigation
+ */
+.navbar
+{
+    position:relative;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -ms-flex-align:center;
+    align-items:center;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    padding:0.5rem 1rem;
+    clear:both;
+}
+.navbar a{margin:0; padding:0; text-decoration:none; display:inline-block; border:0;}
+.navbar .logo, .navbar .menubar, .navbar .right-menubar
+{
+    position:relative;
+    top:0;
+    margin:0;
+    text-decoration:none;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -ms-flex-align:center;
+    align-items:center;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+.navbar .logo{padding:0 1rem 0 0;}
+.navbar .logo img{max-height:100%; width:auto; margin:0 0.5rem 0 0; padding:0; top:0.25rem;}
+
+.navbar .menubar
+{
+    
+}
+.navbar .menubar{padding:0;}
+.navbar ul.menubar{list-style:none; float:left;}
+.navbar ul.menubar li.menu-item{display:block; padding:0 0.5rem;}
+.navbar ul.menubar li a{}
+
+.navbar .right-menubar{padding:0;}
+.navbar ul.right-menubar{list-style:none; float:right;}
+.navbar ul.right-menubar li.menu-item{display:block; padding:0 0.5rem;}
 /*
  * 13.0 Layout
  */
@@ -1426,6 +1543,7 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
         -ms-flex-order:13;
         order:13;
     }
+    
 }
 @media screen and (max-width: 610px){
     .wrapper{padding:0rem;}
@@ -1586,4 +1704,51 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
         -ms-flex-order:13;
         order:13;
     }
+
+    /*Tooltip*/
+    .tooltip-right
+    {
+        top:100%;
+        left:50%;
+        margin-left:-60px;
+    }
+    .tooltiptext.tooltip-right::after
+    {
+        position: absolute;
+        top:-19%;  /* At the top of the tooltip */
+        left:50%;
+        margin-left:-5px;
+        border-width:5px;
+        border-style:solid;
+        border-top-color:transparent;
+        border-left-color:transparent;
+        border-right-color:transparent;
+        border-bottom-color:inherit;
+    }
+    .tooltip-left
+    {
+        top:-50%;
+        bottom:100%;
+        left:50%;
+        margin-left:-60px;
+    }
+    .tooltiptext.tooltip-left::after
+    {
+        position: absolute;
+        top: 117.6666666667%; /* At the bottom of the tooltip */
+        left:50%;
+        margin-left:-5px;
+        border-width:5px;
+        border-style:solid;
+        border-top-color:inherit;
+        border-left-color:transparent;
+        border-right-color:transparent;
+        border-bottom-color:transparent;
+    }
+    
+    /*Table*/
+    .table.responsive{position:relative; display:block;}
+    .table.responsive thead{display:table-row; float:left;}
+    .table.responsive tr{display:table-row; text-align:right;}
+    .table.responsive tbody{position:relative; display:block; width:auto; vertical-align:middle; overflow-x:auto; white-space:nowrap;}
 }
