@@ -7,8 +7,8 @@ Author      : Hansen Lee
 TABLE OF CONTENTS
 ----------------------------------------------------------------
 1.0 Normalize
-2.0 Accessibilit
-y3.0 Alignments
+2.0 Accessibility
+3.0 Alignments
 4.0 Clearings
 5.0 Typography
 6.0 Forms
@@ -188,16 +188,25 @@ body{
 .t-align-left{text-align:left;}
 .t-align-right{text-align:right;}
 .t-align-center{text-align:center;}
-.t-align-middle{text-align:center; vertical-align:middle; display: flex; align-items: center; justify-content: center; line-height:100px;}
 .t-align-justify{text-align:justify;}
 
 /*Vertical Align*/
-.valign-default{vertical-align:baseline;}
-.valign-top{vertical-align:top;}
-.valign-text-top{vertical-align:text-top;}
-.valign-middle{vertical-align:middle; display:inline-block;}
-.valign-bottom{vertical-align:bottom;}
-.valign-text-bottom{vertical-align:text-bottom;}
+.v-align{
+    display: table;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+.v-align .default{display:table-cell; vertical-align:baseline;}
+.v-align .top{display:table-cell; vertical-align:top;}
+.v-align .text-top{display:table-cell; vertical-align:text-top;}
+.v-align .middle{display:table-cell; vertical-align:middle;}
+.v-align .bottom{display:table-cell; vertical-align:bottom;}
+.v-align .text-bottom{display:table-cell; vertical-align:text-bottom;}
+
+/*Content*/
+.content-middle{display:table; margin:auto; width:100%; height:100%;}
+.content-middle .element{display:table-cell; text-align:center; vertical-align:middle;}
 
 /*Row Flex align*/
 .flex-align-start{align-items:flex-start !important;}
@@ -588,14 +597,20 @@ a
     flex:1;
     max-width: 100%;
 }
-.col{padding:1rem;}
+.col{
+    padding:1rem;
+    width: 100%;
+    max-height: 100%;
+}
 .col.xl1, .col.xl2, .col.xl3, .col.xl4, .col.xl5, .col.xl6, .col.xl7, .col.xl8, .col.xl9, .col.xl10, .col.xl11, .col.xl12,
 .col.l1, .col.l2, .col.l3, .col.l4, .col.l5, .col.l6, .col.l7, .col.l8, .col.l9, .col.l10, .col.l11, .col.l12,
 .col.m1, .col.m2, .col.m3, .col.m4, .col.m5, .col.m6, .col.m7, .col.m8, .col.m9, .col.m10, .col.m11, .col.m12,
 .col.s1, .col.s2, .col.s3, .col.s4, .col.s5, .col.s6, .col.s7, .col.s8, .col.s9, .col.s10, .col.s11, .col.s12
 {
     position: relative;
+    /*display: table;*/
     width: 100%;
+    /*height: 100%;*/
 }
     
 .col12
@@ -670,6 +685,11 @@ a
     flex:0 0 8.3333333333%;
     max-width:8.3333333333%;
 }
+
+/*Row Align Items*/
+.align-items-start {-ms-flex-align: start!important; align-items: flex-start!important;}
+.align-items-center {-ms-flex-align: center!important; align-items: center!important;}
+.align-items-end {-ms-flex-align: end!important; align-items: flex-end!important;}
 
 /*Grid Order*/
 .order{}
@@ -918,9 +938,17 @@ a
 /*Cards*/
 .card
 {
-    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    padding:0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
     transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     -moz-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     -webkit-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -928,7 +956,24 @@ a
     -moz-border-radius:0.3rem;
     -webkit-border-radius:0.3rem;
     background-color:inherit;
+    border:1px solid rgba(0, 0, 0, 0.2);
 }
+/*
+.card
+{
+    box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -moz-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-transition:color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-radius:0.3rem;
+    -moz-border-radius:0.3rem;
+    -webkit-border-radius:0.3rem;
+    background-color:inherit;
+    border:1px solid rgba(0, 0, 0, 0.2);
+}
+*/
 .card:hover
 {
     box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
@@ -1009,14 +1054,31 @@ a
 }
 
 /*Card Column*/
-.card.horizontal .card-img{max-width:50%; height:auto;}
-.card.horizontal .col-1, .card.basic.horizontal .col-1{width:16.67%;}
-.card.horizontal .col-2, .card.basic.horizontal .col-2{width:25%;}
-.card.horizontal .col-3, .card.basic.horizontal .col-3{width:33.33%;}
-.card.horizontal .col-4, .card.basic.horizontal .col-4{width:50%;}
+.card.horizontal .card-img{max-width:50%; height:auto}                          
+.card.horizontal .col-1, .card.basic.horizontal .col-1{
+    -ms-flex:0 0 16.666666667%;
+    flex:0 0 16.666666667%;
+    max-width:16.666666667%;
+}
+.card.horizontal .col-2, .card.basic.horizontal .col-2{
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%;
+}
+.card.horizontal .col-3, .card.basic.horizontal .col-3{
+    -ms-flex:0 0 33.33%;
+    flex:0 0 33.33%;
+    max-width:33.33%;
+}
+.card.horizontal .col-4, .card.basic.horizontal .col-4{
+    -ms-flex:0 0 50%;
+    flex:0 0 50%;
+    max-width:50%;
+}
 .card.horizontal .img, .card.basic .img
 {
     width:100%;
+    height: 100%;
     height:auto; 
     border-radius:0.3rem 0 0 0.3rem;
     -moz-border-radius:0.3rem 0 0 0.3rem;
