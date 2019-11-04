@@ -467,8 +467,6 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.bordered tbody tr td, .table.bordered thead tr th{border:1px solid #CCC;}
 .table.bordered thead{border-bottom:3px solid #CCC;}
 
-.table.responsive{overflow-x:auto;}
-
 .table.hover tr{}
 .table.hover thead tr:hover{box-shadow:0px 3px 6px #AAA; -moz-box-shadow:0px 3px 6px #AAA; -webkit-box-shadow:0px 3px 6px #AAA;}
 .table.hover tbody tr:hover{background-color:rgba(0,0,0,0.05);}
@@ -485,6 +483,8 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.dark.stripped.hover tbody tr:nth-of-type(odd):hover{background-color:rgba(0,0,0,0.75);}
 
 .table.light thead{background-color:#FFF;}
+
+.table.responsive{overflow-x:auto;}
 
 /*
  * 10.0 Links
@@ -939,6 +939,8 @@ a
 .col-example .row{padding:1rem;}
 .col-example:hover{background-color:#AAE6F1; border:1px solid #ACBBBE;}
 .div-example .row {margin:0 -1rem;}
+.div-example span:nth-child(1){margin:auto;}
+.div-example span:nth-child(n+2){margin:auto 10px;}
 
 /*
  * 15.0 Widgets
@@ -1458,6 +1460,22 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
         order:13;
     }
 }
+
+/*Exemption*/
+@media screen and (max-width:992px)
+{
+    /*Table*/
+    .table.responsive{position:relative; width:100%; display:block; overflow-x:auto; border-collapse:collapse; border-spacing:0;}
+    .table.responsive thead, .table.responsive tbody{display:table-row; float:left;}
+    .table.responsive tbody{display:block; width:auto; position:relative; overflow-x:auto; white-space:nowrap;}
+    .table.responsive th{display:block; text-align:right;}
+    .table.responsive td{display:block; text-align:left; min-width:1.25rem;}
+    .table.responsive th, .table.responsive td{margin:0; vertical-align:top; padding:1.5rem 2rem;}
+    .table.responsive thead tr{display:inline-block; padding:0 1.5rem 0 0;}
+    .table.responsive tbody tr{border:0; display:inline-block; vertical-align:top;}
+    /*.table.responsive tbody{position:relative; display:block; width:auto; vertical-align:middle; overflow-x:auto; white-space:nowrap;}*/
+}
+
 @media screen and (max-width: 992px) and (min-width: 611px) {
     .wrapper{padding:0rem;}
     .col{
@@ -1819,10 +1837,4 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
         border-right-color:transparent;
         border-bottom-color:transparent;
     }
-    
-    /*Table*/
-    .table.responsive{position:relative; display:block;}
-    .table.responsive thead{display:table-row; float:left;}
-    .table.responsive tr{display:table-row; text-align:right;}
-    .table.responsive tbody{position:relative; display:block; width:auto; vertical-align:middle; overflow-x:auto; white-space:nowrap;}
 }
