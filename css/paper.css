@@ -205,12 +205,12 @@ body{
 .v-align .text-bottom{display:table-cell; vertical-align:text-bottom;}
 
 /*Table or Span*/
-v-align-default, v-align-baseline{vertical-align:baseline;}
-v-align-top{vertical-align:top;}
-v-align-text-top{vertical-align:text-top;}
-v-align-middle{vertical-align:middle;}
-v-align-bottom{vertical-align:bottom;}
-v-align-text-bottom{vertical-align:text-bottom;}
+.v-align-default, .v-align-baseline{vertical-align:baseline;}
+.v-align-top{vertical-align:top !important;}
+.v-align-text-top{vertical-align:text-top !important;}
+.v-align-middle{vertical-align:middle !important;}
+.v-align-bottom{vertical-align:bottom !important;}
+.v-align-text-bottom{vertical-align:text-bottom !important;}
 
 /*Content*/
 .content-middle{display:table; margin:auto; width:100%; height:100%;}
