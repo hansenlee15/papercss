@@ -470,10 +470,10 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.hover tr{}
 .table.hover thead tr:hover{box-shadow:0px 3px 6px #AAA; -moz-box-shadow:0px 3px 6px #AAA; -webkit-box-shadow:0px 3px 6px #AAA;}
 .table.hover tbody tr:hover{background-color:rgba(0,0,0,0.05);}
-.table.stripped.hover tbody tr:nth-of-type(odd):hover{background-color:rgba(0,0,0,0.05);}
 
 .table.stripped{}
 .table.stripped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,0.03);}
+.table.stripped.hover tbody tr:nth-of-type(odd):hover{background-color:rgba(0,0,0,0.05);}
 
 .table.dark{}
 .table.dark thead tr, .table.dark tbody tr{background-color:#313131;}
@@ -1471,21 +1471,21 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
     }
     /*Table*/
     .table.responsive{width:100%; display:block; border-collapse:collapse; border-spacing:0; position:relative;}
+    .table.responsive thead{display:block; width:auto; float:left !important; border-top:0; border-left:0; border-bottom:0; border-right:2px solid;}
     .table.responsive thead tr th::before {content:'\00a0';}
-    .table.responsive thead{display:block; width:auto; float:left; border-top:0; border-left:0; border-bottom:0; border-right:2px solid;}
-    .table.responsive thead tr{display:block; padding:0;}
-    .table.responsive thead, .table.responsive tbody{/*display:table-row;*/ float:left;}
-    .table.responsive tbody{display:block; width:auto; position:relative; overflow-x:auto; white-space:nowrap;}
+    .table.responsive thead tr{display:block; position:relative; padding:0;}
+    .table.responsive thead, .table.responsive tbody{}
+    .table.responsive tbody{display:block !important; height:100%; width:auto; position:relative !important; overflow:auto; white-space:nowrap;}
     .table.responsive tbody tr{display:inline-block; vertical-align:top; border:0;}
     .table.responsive tbody tr{padding:0; margin:0; border-spacing:0;}
     .table.responsive tbody td{display:block;}
     .table.responsive th{display:block; text-align:right;}
     .table.responsive td:empty::before{content:'\00a0';}
     .table.responsive td{display:block; min-height:1.25rem; min-width:1.25rem; text-align:left;}
-    .table.responsive td, .table.responsive th{padding:1.25rem 1.25rem; margin:0;}
+    .table.responsive td, .table.responsive th{padding:1.25rem 1.5rem; margin:0;}
     .table.responsive td, .table.responsive th{margin:0; vertical-align:top;}
     .table.responsive tr{border-bottom:none; padding:0;}
-    
+    .table.responsive{/*clear:both !important;*/}
     
     /*.table.responsive tbody{position:relative; display:block; width:auto; vertical-align:middle; overflow-x:auto; white-space:nowrap;}*/
 }
