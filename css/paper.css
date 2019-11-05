@@ -482,10 +482,9 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.dark.stripped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,0.85);}
 .table.dark.stripped.hover tbody tr:nth-of-type(odd):hover{background-color:rgba(0,0,0,0.75);}
 
-.table.light thead{background-color:#FFF;}
+.table.light thead{background-color:rgba(255,255,255,0.05);}
 
-.table.responsive{overflow-x:auto;}
-
+.table.responsive{width:100%; overflow-x:auto !important;}
 /*
  * 10.0 Links
  */
@@ -1464,15 +1463,30 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
 /*Exemption*/
 @media screen and (max-width:992px)
 {
+    html {
+	box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
     /*Table*/
-    .table.responsive{position:relative; width:100%; display:block; overflow-x:auto; border-collapse:collapse; border-spacing:0;}
-    .table.responsive thead, .table.responsive tbody{display:table-row; float:left;}
+    .table.responsive{width:100%; display:block; border-collapse:collapse; border-spacing:0; position:relative;}
+    .table.responsive thead tr th::before {content:'\00a0';}
+    .table.responsive thead{display:block; width:auto; float:left; border-top:0; border-left:0; border-bottom:0; border-right:2px solid;}
+    .table.responsive thead tr{display:block; padding:0;}
+    .table.responsive thead, .table.responsive tbody{/*display:table-row;*/ float:left;}
     .table.responsive tbody{display:block; width:auto; position:relative; overflow-x:auto; white-space:nowrap;}
+    .table.responsive tbody tr{display:inline-block; vertical-align:top; border:0;}
+    .table.responsive tbody tr{padding:0; margin:0; border-spacing:0;}
+    .table.responsive tbody td{display:block;}
     .table.responsive th{display:block; text-align:right;}
-    .table.responsive td{display:block; text-align:left; min-width:1.25rem;}
-    .table.responsive th, .table.responsive td{margin:0; vertical-align:top; padding:1.5rem 2rem;}
-    .table.responsive thead tr{display:inline-block; padding:0 1.5rem 0 0;}
-    .table.responsive tbody tr{border:0; display:inline-block; vertical-align:top;}
+    .table.responsive td:empty::before{content:'\00a0';}
+    .table.responsive td{display:block; min-height:1.25rem; min-width:1.25rem; text-align:left;}
+    .table.responsive td, .table.responsive th{padding:1.25rem 1.25rem; margin:0;}
+    .table.responsive td, .table.responsive th{margin:0; vertical-align:top;}
+    .table.responsive tr{border-bottom:none; padding:0;}
+    
+    
     /*.table.responsive tbody{position:relative; display:block; width:auto; vertical-align:middle; overflow-x:auto; white-space:nowrap;}*/
 }
 
