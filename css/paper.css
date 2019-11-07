@@ -1,7 +1,8 @@
 /*
-Paper CSS v.0.1.0
-Created on  : 21/12/2018, 5:30:55 PM
-Author      : Hansen Lee
+Paper CSS v.0.1.0.1
+Created on      : 21/12/2018, 5:30:55 PM
+Last Modified   : 7/11/2019
+Author          : Hansen Lee
 */
 /*--------------------------------------------------------------
 TABLE OF CONTENTS
@@ -240,23 +241,99 @@ h6{margin:0.857rem 0 0.375rem 0; font-size:1.5em; line-height:110%;}
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family:inherit; font-weight:400; line-height:1.6;}
 
-/*Paragraph*/
+/*Paragraph and Character Style*/
 p{padding:0; font-family:inherit; font-size:1.12em; color:inherit; line-height:1.6; letter-spacing:0.015rem;}
-b,strong{font-weight:700;}
-.thin{font-weight:300;}
-.light{font-weight:200;}
-em{font-style:italic;}
-blockquote{margin:1rem 0rem 1rem 0.75rem; padding-left:1rem; font-size:1.225em; font-style:italic; border-left: 0.286rem solid #ffcc80; line-height:1.5;}
+.t-bold, b,strong{font-weight:700;}
+.t-thin, .thin{font-weight:300;}
+.t-lite, .lite{font-weight:200;}
+.t-italic, em{font-style:italic;}
+
+.overline{text-decoration:overline;}
+.line-through{text-decoration:line-through;}
+.underline{text-decoration:underline;}
+.underline-overline{text-decoration:underline overline;}
+
+.t-transform-uppercase{text-transform:uppercase;}
+.t-transform-lowercase{text-transform:lowercase;}
+.t-transform-capitalize{text-transform:capitalize;}
+
+.indent-0{text-indent:0;}
+.indent-1{text-indent:0.5em;}
+.indent-2{text-indent:1em;}
+.indent-3{text-indent:1.5em;}
+.indent-4{text-indent:2em;}
+.indent-5{text-indent:2.5em;}
+.indent-6{text-indent:3em;}
+.indent-7{text-indent:3.5em;}
+.indent-8{text-indent:4em;}
+.indent-9{text-indent:4.5em;}
+.indent-10{text-indent:5em;}
+.indent-11{text-indent:5.5em;}
+.indent-12{text-indent:6em;}
+
+.outdent-0{text-indent:0;}
+.outdent-1{text-indent:-0.5em;}
+.outdent-2{text-indent:-1em;}
+.outdent-3{text-indent:-1.5em;}
+.outdent-4{text-indent:-2em;}
+.outdent-5{text-indent:-2.5em;}
+.outdent-6{text-indent:-3em;}
+.outdent-7{text-indent:-3.5em;}
+.outdent-8{text-indent:-4em;}
+.outdent-9{text-indent:-4.5em;}
+.outdent-10{text-indent:-5em;}
+.outdent-11{text-indent:-5.5em;}
+.outdent-12{text-indent:-6em;}
+
+/*Blockquote Style*/
+blockquote{width:auto; display:inline-block; font-size:1.225em; line-height:1.5;}
 blockquote:before{content:'\201c'; font-size:4em; line-height:0.8;}
+
+.blockquote-default{
+    margin:1rem 0rem 1rem 0.5rem; 
+    padding:1rem; 
+    font-style:inherit; 
+    border-left: 0.286rem solid rgba(255, 204, 128, 1);
+    background-color:rgba(255, 255, 255, 1);
+}
+.blockquote-box-shadow-dark{
+    color:rgba(86, 86, 86, 1);
+    font-style:inherit;
+    margin:1rem 0.9rem 1.5rem 0rem; 
+    padding:0.5rem 1rem 1.5rem 1rem; 
+    border:0.286rem solid rgba(86, 86, 86, 1);
+    -moz-border-radius:1.25rem;
+    -webkit-border-radius:1.25rem;
+    border-radius:1.25rem;
+    -moz-box-shadow:1rem 1rem 0 0 rgba(86, 86, 86, 1); 
+    -webkit-box-shadow:1rem 1rem 0 0 rgba(86, 86, 86, 1); 
+    box-shadow:1rem 1rem 0 0 rgba(86, 86, 86, 1);
+}
+
+.blockquote-box-shadow-light{
+    color:rgba(255, 255, 255, 1);
+    font-style:inherit;
+    margin:1rem 0.9rem 1.5rem 0rem; 
+    padding:0.5rem 1rem 1.5rem 1rem; 
+    border:0.286rem solid rgba(255, 255, 255, 1);
+    -moz-border-radius:1.25rem;
+    -webkit-border-radius:1.25rem;
+    border-radius:1.25rem;
+    -moz-box-shadow:1rem 1rem 0 0 rgba(255, 255, 255, 1); 
+    -webkit-box-shadow:1rem 1rem 0 0 rgba(255, 255, 255, 1); 
+    box-shadow:1rem 1rem 0 0 rgba(255, 255, 255, 1);
+}
+/*Cite*/
 cite{font-size:1em;}
 
 /*Code*/
 pre{
     background-color:#FCFCFC;
     margin:1rem 0;
-    padding:0.025rem 0.5rem;
+    padding:0.025rem 0.5rem 0.5rem;
     border:1px solid #CCC;
-    white-space: nowrap;
+    overflow-x:auto;
+    white-space:nowrap;
 }
 code, xmp{font-size:1.1em; line-height:1.3;}
 
@@ -463,9 +540,9 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.borderless tbody tr, .table.borderless tbody tr td, .table.borderless thead tr th{border:0 solid #FFF;}
 .table.borderless thead{border:0 solid #FFF;}
 
-.table.bordered{}
-.table.bordered tbody tr td, .table.bordered thead tr th{border:1px solid #CCC;}
-.table.bordered thead{border-bottom:3px solid #CCC;}
+.table.border{}
+.table.border tbody tr td, .table.border thead tr th{border:1px solid #CCC;}
+.table.border thead{border-bottom:3px solid #CCC;}
 
 .table.hover tr{}
 .table.hover thead tr:hover{box-shadow:0px 3px 8px #AAA; -moz-box-shadow:0px 3px 8px #AAA; -webkit-box-shadow:0px 3px 8px #AAA;}
@@ -485,6 +562,9 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 .table.light thead{background-color:rgba(255,255,255,0.05);}
 
 .table.responsive{width:100%; overflow-x:auto !important;}
+
+.table.fixed-header thead tr{display:block;}
+.table.fixed-header thead th{}
 /*
  * 10.0 Links
  */
@@ -551,35 +631,35 @@ a
  * Background Colour
  */
 .bg-color{background-color:rgba(255, 255, 255, 0);}
-.bg-color.light-salmon-pink{background-color:rgba(255, 154, 162, 1);}
-.bg-color.melon{background-color:rgba(255, 183, 178, 1);}
-.bg-color.lumber{background-color:rgba(255, 223, 211, 1);}
-.bg-color.bisque{background-color:rgba(252, 226, 194, 1);}
-.bg-color.papaya-whip{background-color:rgba(252, 241, 216, 1);}
-.bg-color.lemon-meringue{background-color:rgba(247, 235, 195, 1);}
-.bg-color.cream{background-color:rgba(255, 255, 207, 1);}
-.bg-color.light-yellow{background-color:rgba(255, 255, 216, 1);}
-.bg-color.old-lace{background-color:rgba(249, 247, 232, 1);}
-.bg-color.baby-pink{background-color:rgba(242, 203, 187, 1);}
-.bg-color.apricot{background-color:rgba(253, 207, 179, 1);}
-.bg-color.unbleached-silk{background-color:rgba(251, 214, 198, 1);}
-.bg-color.dark-salmon{background-color:rgba(223, 152, 129, 1);}
-.bg-color.pale-chestnut{background-color:rgba(230, 185, 161, 1);}
-.bg-color.nyanza{background-color:rgba(222, 253, 224, 1);}
-.bg-color.light-green{background-color:rgba(152, 230, 144, 1);}
-.bg-color.pastel-green{background-color:rgba(133, 222, 119, 1);}
-.bg-color.magic-mint{background-color:rgba(181, 234, 215, 1);}
-.bg-color.water{background-color:rgba(222, 243, 253, 1);}
-.bg-color.pastel-blue{background-color:rgba(179, 200, 200, 1);}
-.bg-color.iceberg{background-color:rgba(108, 178, 209, 1);}
-.bg-color.celestial-blue{background-color:rgba(79, 158, 196, 1);}
-.bg-color.classic-rose{background-color:rgba(248, 209, 224, 1);}
-.bg-color.light-periwinkle{background-color:rgba(206, 200, 228, 1);}
-.bg-color.periwinkle{background-color:rgba(199, 206, 234, 1);}
-.bg-color.opal{background-color:rgba(177, 197, 195, 1);}
-.bg-color.jet-stream{background-color:rgba(190, 215, 209, 1);}
-.bg-color.white-coffee{background-color:rgba(233, 226, 215, 1);}
-.bg-color.gainsboro{background-color:rgba(222, 226, 217, 1);}
+.bg-color-light-salmon-pink{background-color:rgba(255, 154, 162, 1);}
+.bg-color-melon{background-color:rgba(255, 183, 178, 1);}
+.bg-color-lumber{background-color:rgba(255, 223, 211, 1);}
+.bg-color-bisque{background-color:rgba(252, 226, 194, 1);}
+.bg-color-papaya-whip{background-color:rgba(252, 241, 216, 1);}
+.bg-color-lemon-meringue{background-color:rgba(247, 235, 195, 1);}
+.bg-color-cream{background-color:rgba(255, 255, 207, 1);}
+.bg-color-light-yellow{background-color:rgba(255, 255, 216, 1);}
+.bg-color-old-lace{background-color:rgba(249, 247, 232, 1);}
+.bg-color-baby-pink{background-color:rgba(242, 203, 187, 1);}
+.bg-color-apricot{background-color:rgba(253, 207, 179, 1);}
+.bg-color-unbleached-silk{background-color:rgba(251, 214, 198, 1);}
+.bg-color-dark-salmon{background-color:rgba(223, 152, 129, 1);}
+.bg-color-pale-chestnut{background-color:rgba(230, 185, 161, 1);}
+.bg-color-nyanza{background-color:rgba(222, 253, 224, 1);}
+.bg-color-light-green{background-color:rgba(152, 230, 144, 1);}
+.bg-color-pastel-green{background-color:rgba(133, 222, 119, 1);}
+.bg-color-magic-mint{background-color:rgba(181, 234, 215, 1);}
+.bg-color-water{background-color:rgba(222, 243, 253, 1);}
+.bg-color-pastel-blue{background-color:rgba(179, 200, 200, 1);}
+.bg-color-iceberg{background-color:rgba(108, 178, 209, 1);}
+.bg-color-celestial-blue{background-color:rgba(79, 158, 196, 1);}
+.bg-color-classic-rose{background-color:rgba(248, 209, 224, 1);}
+.bg-color-light-periwinkle{background-color:rgba(206, 200, 228, 1);}
+.bg-color-periwinkle{background-color:rgba(199, 206, 234, 1);}
+.bg-color-opal{background-color:rgba(177, 197, 195, 1);}
+.bg-color-jet-stream{background-color:rgba(190, 215, 209, 1);}
+.bg-color-white-coffee{background-color:rgba(233, 226, 215, 1);}
+.bg-color-gainsboro{background-color:rgba(222, 226, 217, 1);}
 /*
  * 13.0 Layout
  */
@@ -956,7 +1036,7 @@ a
 }
 
 /*Example grids*/
-.div-example{border:0px solid #CCC; padding:1rem 1rem; margin:0 0 1rem;}
+.div-example{border:0.2rem solid #EFEFEF; padding:1rem 1rem; margin:0 0 1rem;}
 .square-example,
 .col-example
 {
@@ -1042,10 +1122,10 @@ a
     
 }
 .card .content, .card .action{padding:1rem 1rem;}
-.card .action{border-top:1px solid #CCC; text-transform:uppercase;}
+.card .action{border-top:1px solid #CCC;}
 .card .action a{margin-right:1.5rem;}
 .card .action a:nth-last-child(1){margin-right:0;}
-.card .action a.link{text-decoration: underline; color:#024AFF;}
+.card .action a.link{text-decoration:none; color:#024AFF;}
 .card .action a.link:hover{color:#0A1CB8;}
 
 .card .content h1,
@@ -1503,8 +1583,8 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
 /*Exemption*/
 @media screen and (max-width:992px)
 {
-    html {
-	box-sizing: border-box;
+    html {	
+box-sizing: border-box;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -1516,9 +1596,9 @@ img.responsive, video.responsive{max-width: 100%; height: auto; display:block;}
     .table.responsive thead tr{display:block; position:relative; padding:0;}
     .table.responsive thead, .table.responsive tbody{}
     .table.responsive tbody{display:block !important; height:100%; width:auto; position:relative !important; overflow:auto; white-space:nowrap;}
-    .table.responsive tbody tr{display:inline-block; vertical-align:top; border:0;}
+    .table.responsive tbody tr{display:table-cell; vertical-align:top; border:0;}
     .table.responsive tbody tr{padding:0; margin:0; border-spacing:0;}
-    .table.responsive tbody td{display:block;}
+    .table.responsive tbody td{display:block; min-height:100% !important; height:100%;}
     .table.responsive th{display:block; text-align:right;}
     .table.responsive td:empty::before{content:'\00a0';}
     .table.responsive td{display:block; min-height:1.25rem; min-width:1.25rem; text-align:left;}
