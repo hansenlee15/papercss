@@ -13,6 +13,7 @@ TABLE OF CONTENTS
 4.0 Clearings
 5.0 Typography
 6.0 Forms
+    6.1 Button
 7.0 Formatting
 8.0 Lists
 9.0 Tables
@@ -248,10 +249,11 @@ p{padding:0; font-family:inherit; font-size:1.12em; color:inherit; line-height:1
 .t-lite, .lite{font-weight:200;}
 .t-italic, em{font-style:italic;}
 
-.overline{text-decoration:overline;}
-.line-through{text-decoration:line-through;}
-.underline{text-decoration:underline;}
-.underline-overline{text-decoration:underline overline;}
+.t-overline{text-decoration:overline;}
+.t-line-through{text-decoration:line-through;}
+.t-underline{text-decoration:underline;}
+.t-underline-overline{text-decoration:underline overline;}
+.t-decoration-none{text-decoration: none;}
 
 .t-transform-uppercase{text-transform:uppercase;}
 .t-transform-lowercase{text-transform:lowercase;}
@@ -452,7 +454,9 @@ button, input, optgroup, select, textarea, a.btn{margin:0.75rem 0; padding:0.4re
 
 input.rounded, optgroup.rounded, select.rounded, textarea.rounded{border-radius:0.3rem; -moz-border-radius:0.3rem; -webkit-border-radius:0.3rem;}
 
-/*Button*/
+/*
+ * 6.1 Button
+ */
 .btn
 {
     letter-spacing:0.025rem;
@@ -475,7 +479,7 @@ input.rounded, optgroup.rounded, select.rounded, textarea.rounded{border-radius:
 .btn:hover span.left{padding-left:1rem;}
 .btn:hover span.left:before{opacity:1; left:0;}
 
-/*Size*/
+/*Button Size*/
 .btn.sm{padding:0.35rem 0.875rem 0.35rem;}
 .btn.md{padding:0.65rem 1rem 0.65rem;}
 .btn.lg{padding:1rem 1.33rem 1rem;}
@@ -489,7 +493,8 @@ input.rounded, optgroup.rounded, select.rounded, textarea.rounded{border-radius:
 }
 
 .btn.no-rounded{border-radius:0; -moz-border-radius:0; -webkit-border-radius:0;}
-.btn.rounded{border-radius:0.3rem; -moz-border-radius:0.3rem; -webkit-border-radius:0.3rem;}
+.btn.rounded{border-radius:0.4rem; -moz-border-radius:0.4rem; -webkit-border-radius:0.4rem;}
+.btn.elipse{border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;}
 
 .btn.default{background-color:#FFF; color:#929292;}
 .btn.primary{background-color:#007FFF; color:#FFF;}
@@ -545,6 +550,38 @@ input.rounded, optgroup.rounded, select.rounded, textarea.rounded{border-radius:
 
 
 /*
+ * 6.2 Switch
+ */
+.switch
+{
+    position: relative;
+    display: inline-block;
+}
+.switch input
+{
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch.sm{width: 50px; height: 15px;}
+.switch.md{width: 62px; height: 20px;}
+.switch.lg{width: 74px; height: 28px;}
+.switch.xl{width: 86px; height: 36px;}
+
+.slider
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.slider.no-rounded{border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;}
+.slider.rounded{border-radius: 100px; -moz-border-radius: 100px; -webkit-border-radius: 100px;}
+
+/*
  * 9.0 Tables
  */
 table{display:table; border-spacing:0rem; border-collapse:collapse; width:100%; margin:0.25rem 0rem 1rem;}
@@ -590,6 +627,13 @@ table td, table th{display:table-cell; padding:0.75rem 0.875rem; vertical-align:
 
 .table.fixed-header thead tr{display:block;}
 .table.fixed-header thead th{}
+
+/*Border Variations*/
+.border.thin{border width:0.06rem;}
+.border.normal{border width:0.15rem;}
+.border.thick{border width:0.3rem;}
+.border.bold{border width:0.55rem;}
+
 /*
  * 10.0 Links
  */
