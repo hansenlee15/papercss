@@ -1,7 +1,7 @@
 /*
 Paper CSS v.0.1.0.2
 Created on      : 21/12/2018, 5:30:55 PM
-Last Modified   : 12/5/2023
+Last Modified   : 20/5/2023
 Author          : Hansen Lee
 */
 /*--------------------------------------------------------------
@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family:inherit; font-w
 
 /*Paragraph and Character Style*/
 p{padding:0; font-family:inherit; font-size:1.12em; color:inherit; line-height:1.6; letter-spacing:0.015rem;}
-.t-bold, b,strong{font-weight:700;}
+.t-bold, b, strong{font-weight:700;}
 .t-thin, .thin{font-weight:300;}
 .t-lite, .lite{font-weight:200;}
 .t-italic, em{font-style:italic;}
